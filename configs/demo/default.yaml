@@ -1,0 +1,46 @@
+# Demo configuration
+demo:
+  # Interface type
+  interface: "streamlit"  # or "gradio"
+  
+  # Streamlit config
+  streamlit:
+    title: "Text-to-Image Generation"
+    page_title: "AI Text-to-Image Generator"
+    page_icon: "🎨"
+    layout: "wide"
+    
+  # Gradio config
+  gradio:
+    title: "Text-to-Image Generation"
+    description: "Generate images from text descriptions using AI"
+    theme: "default"
+    
+  # Safety settings
+  safety:
+    enable_nsfw_filter: true
+    enable_safety_checker: true
+    max_prompt_length: 200
+    blocked_words: ["explicit", "nsfw", "adult", "nude"]
+    
+  # UI settings
+  ui:
+    show_negative_prompt: true
+    show_guidance_scale: true
+    show_num_steps: true
+    show_seed: true
+    show_model_selection: true
+    
+  # Generation defaults
+  defaults:
+    prompt: "A beautiful landscape with mountains and a lake"
+    negative_prompt: "blurry, low quality, distorted"
+    guidance_scale: 7.5
+    num_inference_steps: 50
+    seed: null
+    
+  # Gallery settings
+  gallery:
+    max_images: 20
+    show_metadata: true
+    allow_download: true

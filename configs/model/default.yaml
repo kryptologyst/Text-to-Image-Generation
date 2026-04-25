@@ -1,0 +1,40 @@
+# Model configuration for text-to-image generation
+model:
+  name: "stable_diffusion_v1_4"
+  model_id: "CompVis/stable-diffusion-v-1-4-original"
+  scheduler: "PNDMScheduler"
+  safety_checker: true
+  feature_extractor: true
+  requires_safety_checker: true
+  
+  # Alternative models
+  alternatives:
+    - name: "stable_diffusion_v2"
+      model_id: "stabilityai/stable-diffusion-2-1"
+    - name: "stable_diffusion_xl"
+      model_id: "stabilityai/stable-diffusion-xl-base-1.0"
+    - name: "kandinsky"
+      model_id: "kandinsky-community/kandinsky-2-1"
+
+  # Generation parameters
+  generation:
+    num_inference_steps: 50
+    guidance_scale: 7.5
+    height: 512
+    width: 512
+    num_images_per_prompt: 1
+    seed: null  # null for random
+    
+  # Safety and filtering
+  safety:
+    enable_safety_checker: true
+    enable_nsfw_filter: true
+    enable_watermark: false
+    max_prompt_length: 200
+    
+  # Performance
+  performance:
+    torch_dtype: "float16"
+    use_memory_efficient_attention: true
+    enable_cpu_offload: false
+    enable_model_cpu_offload: false
